@@ -138,18 +138,12 @@
       let p = document.getElementById("p_val_enc").value;
       let q = document.getElementById("q_val_enc").value;
       let str = document.getElementById("string_enc").value;
-      console.log(p);
-      console.log(q);
-      console.log(str);
 
       if (p !== '' & q !== '' & str !== '') {
         $.ajax({
-          url: "/rsa/rsafunction/encrypt/" + p + "/" + q + "/" + str + "/true",
+          url: "https://rsa.arslaan.ml/public/RsaFunction/encrypt/" + p + "/" + q + "/" + str + "/true",
           dataType: "json",
           success: function(result) {
-
-            console.log(result);
-            // console.log(Object.keys(result).length);
 
             if (Object.keys(result).length > 1) {
               $("#enc_calculation").html(
@@ -183,17 +177,13 @@
       let p = document.getElementById("p_val_dec").value;
       let q = document.getElementById("q_val_dec").value;
       let str = document.getElementById("string_dec").value;
-      console.log(p);
-      console.log(q);
-      console.log(str);
 
       if (p !== '' & q !== '' & str !== '') {
         $.ajax({
-          url: "/rsa/rsafunction/decrypt/" + p + "/" + q + "/" + str + "/true",
+            
+          url: "https://rsa.arslaan.ml/public/RsaFunction/decrypt/" + p + "/" + q + "/" + str + "/true",
           dataType: "json",
           success: function(result) {
-
-            console.log(result);
 
             if (Object.keys(result).length > 1) {
               $("#dec_calculation").html(
